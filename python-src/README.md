@@ -10,4 +10,4 @@ pip install -r requirements.txt
 ```sh
 python train.py
 ```
-* Model will be available in tfjs-model
+* Model will be available in `./python-src/tfjs-model` directory. The model use in the slides are in `./model` directory
