@@ -35,7 +35,7 @@ async function init() {
         labelContainer.appendChild(document.createElement("div"));
         scoreContainer.appendChild(document.createElement("div"));
         nbs[i] = 0
-        labelContainer.childNodes[0].innerHTML = "initialized"
+        //labelContainer.childNodes[0].innerHTML = "initialized"
     }
 
 
@@ -66,8 +66,8 @@ async function init() {
                     nbs[i] = nbs[i] + 1
                     last[i] = label
 
-                    const classScore = label + ": " + nbs[i];
-                    scoreContainer.childNodes[i].innerHTML = classScore;
+                    //const classScore = label + ": " + nbs[i];
+                    //scoreContainer.childNodes[i].innerHTML = classScore;
 
                     if(label === "Euuh") {                        
                         labelContainer.childNodes[0].innerHTML = "<h1>🐮</h1>"
@@ -78,6 +78,7 @@ async function init() {
             } else {
                 last[i] = ""
             }
+            document.getElementById("score-container-final").innerHTML = "<h1>🐮 " + nbs[1] + " 🤪 " + nbs[2] + "</h1>"
         }
     }, {
         includeSpectrogram: false, // in case listen should return result.spectrogram
