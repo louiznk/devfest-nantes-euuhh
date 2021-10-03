@@ -58,11 +58,6 @@ async function init() {
             if (i > 0 && score >= MIN) {
                 // il faut qu'il y ait une rupture dans la voix (sinon un euhhh long compte plusieurs fois)
                 if (last[i] != label) {
-                    // if (label === "Euuh") {
-                    //     ++nbEuh                        
-                    // } else if (label == "Yolo") {
-                    //     ++nbYolo
-                    // }
                     nbs[i] = nbs[i] + 1
                     last[i] = label
 
@@ -74,6 +69,7 @@ async function init() {
                     } else if (label == "Yolo") {
                         labelContainer.childNodes[0].innerHTML = "<h1>🤪</h1>"
                     }
+                    setTimeout(() => recognizer.stopListening(), 500);
                 }
             } else {
                 last[i] = ""
