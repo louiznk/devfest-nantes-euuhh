@@ -170,7 +170,9 @@
 						<div class="one"><img src="images/flux_01.png"/></div>
 						<div class="two"><img src="images/flux_02.png" class="fragment"/></div>
 						<div class="three"><img src="images/flux_03.png" class="fragment"/></div>
+						<!--
 						<div class="four"><img src="images/flux_04.png" width="50%" class="fragment"/></div>
+						-->
 					</div>
 				</section>
 				<!-- -->
@@ -179,11 +181,80 @@
 				</section>
 				<section>
 					<section>
-						<h3>Pour la présentation Tensorflow dans revealjs</h3>
-						TODO décrire l'intégration dans revealjs
+						<h3>Une présentation avec Tensorflow</h3>
+						<ul>
+							<li>revealjs pour les slides au format web</li>
+							<li>tensorflow.js pour utiliser le modèle généré</li>
+							<li>et un peu de html et javascript pour lié cela</li>
+						</ul>
 					</section>
 					<section>
-						<h3>TODO</h3>					
+						<h3>L'intégration de Tensorflow.js</h3>
+						<pre>
+							<code data-line-numbers="35|17-18|2-14|19-30">
+								<script type="text/template">
+					async function createModel() {
+						const recognizer = speechCommands.create(
+							"BROWSER_FFT", // fourier transform type, not useful to change
+							undefined, // speech commands vocabulary feature, not useful for your models
+							checkpointURL,
+							metadataURL);
+					
+						// check that model and metadata are loaded via HTTPS requests.
+						await recognizer.ensureModelLoaded();
+					
+						// ..
+					
+						return recognizer;
+					}
+					
+					async function init() {
+						const recognizer = await createModel();
+						const labelContainer = document.getElementById("label-container");
+						const classLabels = recognizer.wordLabels(); // get class labels
+						recognizer.listen(result => {
+					
+					        const scores = result.scores; // probability of prediction for each class
+					        // render the probability scores per class
+					        for (let i = 0; i < classLabels.length; i++) {
+					            const label = classLabels[i]
+					            const score = scores[i].toFixed(2)
+								// modify labelContainer
+								//...
+							}
+						}
+						
+					}
+					
+					tf.setBackend('wasm').then(() => init());
+													</script>
+												</code>
+											</pre>
+					</section>
+					<section>
+						<h3>L'ajout du "header" dans revealjs</h3>
+						<pre>
+							<code data-line-numbers="4-6|10-12|13-16">
+								<script type="text/template">
+									<head>
+										<style>										
+											.reveal .header-tf {
+												position: absolute; top: 1em; right: 1em;
+											}
+										</style>
+									</head>
+									<body>
+										<div class="header-tf">
+											<div id="label-container" style="text-align:center"/>
+										</div>
+										<div class="slides">
+											<section><h1>Slide 1</h1></section>
+											<section><h1>Slide 2</h1></section>
+										</div>
+									</body>
+								</script>
+							</code>
+						</pre>
 					</section>
 				</section>
 				<section>
@@ -203,10 +274,13 @@
 						</table>
 					</section>
 					<section>
-						<h3>TODO</h3>
-
+						<h3>Principes</h3>
+						<img src="images/schema-obs.png"/>
 					</section>
-
+					<section>
+						<h3>Implémentation</h3>
+						<img src="images/implementation-obs.png" />
+					</section>
 				</section>
 				<!-- -->
 				<section>

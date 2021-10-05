@@ -69,7 +69,6 @@ async function init() {
                     } else if (label == "Yolo") {
                         labelContainer.childNodes[0].innerHTML = "<h1>🤪</h1>"
                     }
-                    setTimeout(() => recognizer.stopListening(), 500);
                 }
             } else {
                 last[i] = ""
