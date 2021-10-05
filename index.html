@@ -19,7 +19,9 @@
 				background-size: auto 100%;
 				background-repeat: no-repeat;
 			}
-
+			.avatar {
+				min-width: 7em;
+			}
 			.reveal .header-tf {
 				position: absolute;
 				top: 1em;
@@ -61,6 +63,14 @@
 				grid-column: 2;
 				grid-row: 3;
 			}
+     .hide {
+         display: none;
+         visibility: hidden;
+     }
+     .show {
+         display: block;
+         visibility: visible;
+     }
 		</style>
 	</head>
 	<body>
@@ -78,8 +88,8 @@
 					<table class="small">
 						<tbody>
 							<tr>
-								<td>TODO image Pierre</td>
-								<td><img src="images/louis_znk.jpg" class="img-rounded aligncenter"/></td>
+								<td><img src="images/pierre_znk.jpg" class="img-rounded aligncenter avatar" /></td>
+								<td><img src="images/louis_znk.jpg" class="img-rounded aligncenter avatar"/></td>
 							</tr>
 							<tr>
 								<td>Pierre Morvan <br>@ Zenika Paris</td>
@@ -282,10 +292,11 @@
 						<img src="images/implementation-obs.png" />
 					</section>
 				</section>
-				<!-- -->
 				<section>
-					TODO BILAN (version de pierre)
+					<h3>Lors de présentation</h3>
+					<div id="score-container-final"></div>
 				</section>
+				<!-- -->
 				<section>
 					<h2>🙏 ❓</h2>
 				</section>
@@ -300,7 +311,6 @@
 					</ul>
 				</section>
 			</div>
-
 		</div>
 
 		<script src="dist/reveal.js"></script>
