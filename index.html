@@ -114,7 +114,7 @@
               <b>PIERRE</b><br />
               Vous imaginez bien que nous avons sauté sur l'idée pour en faire un abstrat, s'amuser, apprendre, prototyper et maintenant partager.<br />
               C'est pour cela que nous allons vous parler de réseaux de neurones, de la "représentation" du son sous forme d'image et que nous aurons un (ou plusieurs) tics du langage qui viendra jouer les troubles-fêtes dans notre présentation.<br />
-              Mais d'abord lançon la démo et parlons des outils utilisé pour faire du machine learning.
+              Comme c'est plus YOLO, nous utiliserons cette présentation en guise de démo. Nous allons commencé par vous présenter les outils que nous avons utilisé pour faire du machine learning.
           </aside>
 				</section>
 				<!-- -->
@@ -157,7 +157,7 @@
 					<img src="images/reconnaissance-banane.png"/>
           <aside class="notes">
               <b>LOUIS</b><br />
-              Prenons un exemple très grossier de reconnaissance de certains fruits.<br />
+              Voici un exemple très grossier de reconnaissance de certains fruits.<br />
               <br />
               Nous avons différents composants que appellerons neurones.<br />
               Chaque neurone va être spécialisé<br />
@@ -210,7 +210,7 @@
 					<h2>La voix dans ce modèle</h2>
           <aside class="notes">
               <b>PIERRE</b><br />
-              Et maintenant on va vous présenter la representation de la voix.
+              Et maintenant nous allons vous présenter la representation de la voix.
           </aside>
 				</section>
 				<section>
@@ -236,7 +236,7 @@
             <aside class="notes">
                 <b>PIERRE</b><br />
                 Représentation signal<br />
-                Spectrogramme (transformée de fourié)<br />
+                Spectrogramme (transformée de Fourier)<br />
                 (Utilise un) Modèle existant sur la reconnaissance d'image <-> Transfert learning
             </aside>
 				</section>
@@ -254,13 +254,13 @@
               <b>LOUIS</b><br />
               Comme l'a expliqué Pierre nous allons analyser le son en utilisant sa représentation sous forme d'image.<br />
               <br />
-              <b>(+)</b>Ces iamges sont transformés et arrivent au fil de l'eau. Elles sont ajouté à une sorte de ruban visuel.<br />
-              La section de fin de ce ruban est analysé en permanence pour rechercher nos motifs visuels qui correspondent au "Euhh". L'analyse est sur un motif suffisament large pour prendre un "euh" long sinon j'aurai des alertes à chauqe fois que je dis cheveu ou pneu ou...<br />
+              <b>(+)</b>Ces images sont transformées et arrivent au fil de l'eau. Elles sont ajoutées à une sorte de ruban visuel.<br />
+              La section de fin de ce ruban est analysé en permanence pour rechercher nos motifs visuels qui correspondent au "Euhh" (et autres patterns classifiés). L'analyse est sur un motif suffisamment large pour prendre un "euhh" long sinon j'aurai des alertes à chaque fois que je dis cheveu ou pneu ou...<br />
               Cette analyse est donc faite sur une sort de fenêtre glissante sur notre ruban, avec une fenêtre de la même taille que le motif de notre modèle (même si on peut "tricher")<br />
               <br />
-              <b>(+)</b> Et donc si le "motif" "euh" est détecté alors je peux déclencher mon affichage du Euhh.<br />
+              <b>(+)</b> Et donc si le "motif" "euhh" est détecté alors je peux déclencher mon affichage du Euhh.<br />
               <br />
-              [Suite: "et nous allons justement voir comment nous affichaons dans nos webcam le euhh une fois qu'il a été repéré"]
+              [Suite: "et nous allons justement voir comment nous affichons dans nos slides le euhh une fois qu'il a été repéré"]
           </aside>
 				</section>
 				<!-- -->
@@ -370,8 +370,8 @@
 						<img src="images/schema-obs.png"/>
             <aside class="notes">
                 <b>LOUIS</b><br />
-                Nous avons 2 entrée à mixer:<br />
-                - Un programme qui écoute le flux audio et qui avec le modèle que nous avons entriné detecte si le motif sonore "Euhh" est présent. Si il est présent il affiche Euhh.<br />
+                Il s'agit là d'une version que nous avons fait pour le mode "remote". Cette version interagit avec notre webcam. Nous avons ici 2 entrée à mixer:<br />
+                - Un programme qui écoute le flux audio et qui avec le modèle que nous avons entraîné détecte si le motif sonore "Euhh" est présent. Si il est présent il affiche Euhh.<br />
                 - Et notre webcat qui renvoi notre flux vidéo<br />
                 <br />
                 Nous utilisons ensuite un autre programme pour assembler ces 2 flux:<br />
@@ -405,7 +405,7 @@
               <b>PIERRE</b><br />
               En cadeau sachez qu'une fois le principe compris, il est très facile de faire soit même ce type de personnalisation, à partir de son mais aussi de vidéo...<br />
               Faire par exemple apparaître "Digital" avec un gestion...<br />
-              Ou plus convicial faire un jeu de ni oui ni non.<br />
+              Ou plus convivial faire un jeu de ni oui ni non.<br />
               <br />
               <b>Pierre ou Louis</b><br />
               Nous partagerons nos slides avec des liens dont les repos github de ce que nous avons fait.<br />
