@@ -10,13 +10,14 @@ const nbs = [];
 const SPECTRORAM_TIME_MS = 1000;
 const MIN_TIME_BEETWEEN_MS = 600;
 const OVERLAP_FACTOR = MIN_TIME_BEETWEEN_MS * 1.0 / SPECTRORAM_TIME_MS;
-const PROBABILITY_THRESHOLD = 0.9;
+const PROBABILITY_THRESHOLD = 0.91;
 
 const MAP_MIN_PROBABILITY_PER_LABELS = {
     "Euuh": PROBABILITY_THRESHOLD,
     "Yolo": PROBABILITY_THRESHOLD + 0.08,
     "Next": PROBABILITY_THRESHOLD + 0.05,
-    "Back": PROBABILITY_THRESHOLD + 0.05};
+    "Back": PROBABILITY_THRESHOLD + 0.05
+};
 
 async function createModel() {
     const checkpointURL = URL + "model.json"; // model topology
